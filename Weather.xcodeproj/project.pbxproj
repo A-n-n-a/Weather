@@ -15,6 +15,7 @@
 		95263C041EEAE078005815DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95263C021EEAE078005815DC /* LaunchScreen.storyboard */; };
 		95263D591EEB1063005815DC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95263D571EEB1063005815DC /* FBSDKCoreKit.framework */; };
 		95263D5A1EEB1063005815DC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95263D581EEB1063005815DC /* FBSDKLoginKit.framework */; };
+		95263D6B1EEBCC71005815DC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95263D6A1EEBCC71005815DC /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		95263C051EEAE078005815DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95263D571EEB1063005815DC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		95263D581EEB1063005815DC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		95263D6A1EEBCC71005815DC /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E0A16C0420DDD56D88B51FE0 /* Pods_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 			children = (
 				95263BF91EEAE078005815DC /* AppDelegate.swift */,
 				95263BFB1EEAE078005815DC /* ViewController.swift */,
+				95263D6A1EEBCC71005815DC /* TableViewController.swift */,
 				95263BFD1EEAE078005815DC /* Main.storyboard */,
 				95263C001EEAE078005815DC /* Assets.xcassets */,
 				95263C021EEAE078005815DC /* LaunchScreen.storyboard */,
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95263BFC1EEAE078005815DC /* ViewController.swift in Sources */,
+				95263D6B1EEBCC71005815DC /* TableViewController.swift in Sources */,
 				95263BFA1EEAE078005815DC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    //var city = ""
+    // var cityEscaped = city.stringByAddingEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
+    
+    //    let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(cityEscaped!)&APPID=c50391d958cdbde9e137158a91a1c8e3")
     
     let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=London&APPID=c50391d958cdbde9e137158a91a1c8e3")
     
@@ -20,6 +24,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 //    var desc = String()
 //    var icon = String()
     
+    var cityList = [String]()
     var cities = [String]()
     var temperatures = [Int]()
     var descriptions = [String]()
@@ -33,6 +38,8 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
@@ -88,6 +95,9 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         session.resume()
     }
     
+    @IBAction func addCity(_ sender: UIBarButtonItem) {
+        openCityAddAlert()
+    }
     
     func stringIconToImage (strIcon: String) -> UIImage {
         let iconImage = UIImage(named: strIcon)
@@ -97,6 +107,27 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     
     func kelvinToCelcius (kelvin: Int) -> Int {
         return Int(Float(kelvin) - 273.15)
+    }
+    
+    func openCityAddAlert() {
+        let alert = UIAlertController(title: "Add city", message: "Enter city name", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(cancel)
+        
+        let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action: UIAlertAction) in
+            print("OK")
+            let textField = alert.textFields?[0]
+            self.cityList.append((textField?.text!)!)
+            print((textField?.text!)!)
+        }
+            alert.addAction(ok)
+        
+        alert.addTextField { (textField:UITextField) in
+            textField.placeholder = "City Name"
+        }
+        self.present(alert, animated: true, completion: nil)
+        
     }
 
 
@@ -161,6 +192,8 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
+    
     
 
 }

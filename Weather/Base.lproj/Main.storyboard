@@ -111,7 +111,13 @@
                             <outlet property="delegate" destination="Z5A-Zr-eyg" id="4YF-Tk-Fwo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add city:" id="WjT-an-urK"/>
+                    <navigationItem key="navigationItem" title="Add city:" id="WjT-an-urK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iYb-dS-Ar8">
+                            <connections>
+                                <action selector="addCity:" destination="Z5A-Zr-eyg" id="MCw-u0-DMd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="0hM-OP-F4m" id="nFV-Mf-7eg"/>
                     </connections>

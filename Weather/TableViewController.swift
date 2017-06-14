@@ -33,6 +33,8 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     var descriptions = [String]()
     var icons = [String]()
     
+    var text = String()
+    
     var data = ["Dog", "Cat"]
     var filteredData = [String]()
     
@@ -40,15 +42,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(ref?.key)
-        
-
         
         let weatherObject = NSData(contentsOf: url!)
         //if weatherObject != nil {
-        print("WEATHER OBJECT:\n \(String(describing: weatherObject))")
-        
-       
+        //print("WEATHER OBJECT:\n \(String(describing: weatherObject))")
         
         //JSON Open Weather Map
         let session = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -117,14 +114,12 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action: UIAlertAction) in
             print("OK")
             let textField = alert.textFields?[0]  //.first
-            let text = textField?.text!
-            self.cityList.append(text!)
+            self.text = (textField?.text!)!
+            //self.cityList.append(text!)
             
-            let cityItemRef = self.ref?.child(text!)
-            //let cityItemRef = self.ref?.child("cityList").childByAutoId()
-            cityItemRef?.setValue(text)
+            self.saveDataToFirebase(text: self.text)
             
-            print((textField?.text!)!)
+            print(self.text)
         }
             alert.addAction(ok)
         
@@ -134,6 +129,26 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+    func saveDataToFirebase(text: String) {
+        self.ref?.child("cities").childByAutoId().setValue(text)
+        
+//        let cityItemRef = self.ref?.child(text)
+//        //let cityItemRef = self.ref?.child("cityList").childByAutoId()
+//        cityItemRef?.setValue(text)
+
+    }
+    
+    func retrieveDataFromDatabase() {
+        //self.cityList.append(text!)
+        var handle: DatabaseHandle = (ref?.child("cities").observe(.childAdded, with: { (snapshot) in
+            if let item = snapshot.value as? String {
+                self.cityList.append(item)
+                self.tableView.reloadData()
+            }
+        }))!
+    }
+    
 
 
 
@@ -146,6 +161,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //       print("CITIES COUNT 2: \(self.cities.count)")
+        
         return self.cities.count
 
         //return cityList.count

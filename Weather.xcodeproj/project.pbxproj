@@ -18,6 +18,7 @@
 		95263D6B1EEBCC71005815DC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95263D6A1EEBCC71005815DC /* TableViewController.swift */; };
 		95263D6D1EEBE6F2005815DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95263D6C1EEBE6F2005815DC /* City.swift */; };
 		95263D781EEC2885005815DC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95263D771EEC2885005815DC /* Cell.swift */; };
+		95A9BF661EF1233D00676B25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A9BF651EF1233D00676B25 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		95263D6A1EEBCC71005815DC /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		95263D6C1EEBE6F2005815DC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		95263D771EEC2885005815DC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		95A9BF651EF1233D00676B25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0A16C0420DDD56D88B51FE0 /* Pods_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				95263C001EEAE078005815DC /* Assets.xcassets */,
 				95263C021EEAE078005815DC /* LaunchScreen.storyboard */,
 				95263C051EEAE078005815DC /* Info.plist */,
+				95A9BF651EF1233D00676B25 /* GoogleService-Info.plist */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A9BF661EF1233D00676B25 /* GoogleService-Info.plist in Resources */,
 				95263C041EEAE078005815DC /* LaunchScreen.storyboard in Resources */,
 				95263C011EEAE078005815DC /* Assets.xcassets in Resources */,
 				95263BFF1EEAE078005815DC /* Main.storyboard in Resources */,

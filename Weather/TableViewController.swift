@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class TableViewController: UITableViewController, UISearchBarDelegate {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    // connect up to Firebase
+    var ref: DatabaseReference? = Database.database().reference()
+    
     
     //var city = ""
     // var cityEscaped = city.stringByAddingEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
@@ -33,16 +36,12 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     var data = ["Dog", "Cat"]
     var filteredData = [String]()
     
-    var isSearching = false
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        print(ref?.key)
         
-        searchBar.delegate = self
-        searchBar.returnKeyType = UIReturnKeyType.done
 
         
         let weatherObject = NSData(contentsOf: url!)
@@ -117,8 +116,14 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (action: UIAlertAction) in
             print("OK")
-            let textField = alert.textFields?[0]
-            self.cityList.append((textField?.text!)!)
+            let textField = alert.textFields?[0]  //.first
+            let text = textField?.text!
+            self.cityList.append(text!)
+            
+            let cityItemRef = self.ref?.child(text!)
+            //let cityItemRef = self.ref?.child("cityList").childByAutoId()
+            cityItemRef?.setValue(text)
+            
             print((textField?.text!)!)
         }
             alert.addAction(ok)
@@ -141,12 +146,9 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //       print("CITIES COUNT 2: \(self.cities.count)")
-//        return self.cities.count
-        if isSearching {
-            return filteredData.count
-        } else {
-            return cities.count
-        }
+        return self.cities.count
+
+        //return cityList.count
     }
 
     
@@ -154,14 +156,9 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! Cell
         
-        var text: String
-        if isSearching {
-            text = filteredData[indexPath.row]
-        } else {
-            text = cities[indexPath.row]
-        }
+
         
-        cell.cityNameLabel?.text = text
+        cell.cityNameLabel?.text = cities[indexPath.row] //cityName
         cell.descriptionLabel?.text = descriptions[indexPath.row]
         let temp = kelvinToCelcius(kelvin: temperatures[indexPath.row])
         var tempString = ""
@@ -176,18 +173,6 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == "" {
-            isSearching = false
-            view.endEditing(true)
-            tableView.reloadData()
-        } else {
-            isSearching = true
-            filteredData = data.filter({$0 == searchBar.text})
-            tableView.reloadData()
-        }
-
-    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120

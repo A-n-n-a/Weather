@@ -12,5 +12,8 @@ use_frameworks!
 pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
+pod ‘Firebase’
+pod ‘Firebase/Database’
+pod 'Firebase/Core'
 
 end

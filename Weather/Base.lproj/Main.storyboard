@@ -32,7 +32,7 @@
             </objects>
             <point key="canvasLocation" x="964" y="35.532233883058474"/>
         </scene>
-        <!--Add city:-->
+        <!--City List:-->
         <scene sceneID="6Dv-R3-bYU">
             <objects>
                 <tableViewController id="Z5A-Zr-eyg" customClass="TableViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,14 +40,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="0hM-OP-F4m">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="Paj-Ye-JfY" customClass="Cell" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Paj-Ye-JfY" id="YUd-qw-1hI">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -111,16 +106,13 @@
                             <outlet property="delegate" destination="Z5A-Zr-eyg" id="4YF-Tk-Fwo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add city:" id="WjT-an-urK">
+                    <navigationItem key="navigationItem" title="City List:" id="WjT-an-urK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iYb-dS-Ar8">
                             <connections>
                                 <action selector="addCity:" destination="Z5A-Zr-eyg" id="MCw-u0-DMd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="searchBar" destination="0hM-OP-F4m" id="nFV-Mf-7eg"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC7-N5-4PO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

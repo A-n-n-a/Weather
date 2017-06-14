@@ -24,11 +24,35 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.22.1):
     - FBSDKCoreKit
+  - Firebase (4.0.0):
+    - Firebase/Core (= 4.0.0)
+  - Firebase/Core (4.0.0):
+    - FirebaseAnalytics (= 4.0.0)
+    - FirebaseCore (= 4.0.0)
+  - Firebase/Database (4.0.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.0.0)
+  - FirebaseAnalytics (4.0.0):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (4.0.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (4.0.0):
+    - FirebaseAnalytics (~> 4.0)
+  - FirebaseInstanceID (2.0.0):
+    - FirebaseCore (~> 4.0)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - Firebase
+  - Firebase/Core
+  - Firebase/Database
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -38,7 +62,13 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 9c2daf0162214d6d2e21cf8208a9c6c2a2e42b9c
   FBSDKLoginKit: 00cf28916b9f0169763a3d61985d745b579fe304
   FBSDKShareKit: 1cbd0fdc2bb3277dd3522512855dcf1f4088f734
+  Firebase: 284eea779b73fdff309791817da7c68bff8dd572
+  FirebaseAnalytics: 6f08e746f7d66f5452931bc2e822b5df9c66b64a
+  FirebaseCore: 85ad466044c2f013cdb167f85d426d15b128114a
+  FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
+  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
 
-PODFILE CHECKSUM: 9a9f0624b6321df65b045196872e506a9c82dc50
+PODFILE CHECKSUM: d55ac92ff8d335e0665300a5125e9b0984be2a92
 
 COCOAPODS: 1.2.1

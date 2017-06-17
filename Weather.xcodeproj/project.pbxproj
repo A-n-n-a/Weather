@@ -18,7 +18,11 @@
 		95263D6B1EEBCC71005815DC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95263D6A1EEBCC71005815DC /* TableViewController.swift */; };
 		95263D6D1EEBE6F2005815DC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95263D6C1EEBE6F2005815DC /* City.swift */; };
 		95263D781EEC2885005815DC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95263D771EEC2885005815DC /* Cell.swift */; };
+		9575C2A81EF408B600130E36 /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9575C2A71EF408B600130E36 /* CityDetailsViewController.swift */; };
 		95A9BF661EF1233D00676B25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A9BF651EF1233D00676B25 /* GoogleService-Info.plist */; };
+		95A9BF6A1EF1729300676B25 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A9BF691EF1729300676B25 /* SwiftyJSON.swift */; };
+		95A9BF6C1EF1B49900676B25 /* CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A9BF6B1EF1B49900676B25 /* CustomFunctions.swift */; };
+		95A9BF6E1EF1B70800676B25 /* HardCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A9BF6D1EF1B70800676B25 /* HardCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +40,11 @@
 		95263D6A1EEBCC71005815DC /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		95263D6C1EEBE6F2005815DC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		95263D771EEC2885005815DC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		9575C2A71EF408B600130E36 /* CityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
 		95A9BF651EF1233D00676B25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95A9BF691EF1729300676B25 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		95A9BF6B1EF1B49900676B25 /* CustomFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFunctions.swift; sourceTree = "<group>"; };
+		95A9BF6D1EF1B70800676B25 /* HardCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardCode.swift; sourceTree = "<group>"; };
 		E0A16C0420DDD56D88B51FE0 /* Pods_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,10 +106,12 @@
 				95263BFB1EEAE078005815DC /* ViewController.swift */,
 				95263D771EEC2885005815DC /* Cell.swift */,
 				95263D6A1EEBCC71005815DC /* TableViewController.swift */,
+				9575C2A71EF408B600130E36 /* CityDetailsViewController.swift */,
 				95263D6E1EEBE8B1005815DC /* Models */,
 				95263BFD1EEAE078005815DC /* Main.storyboard */,
 				95263C001EEAE078005815DC /* Assets.xcassets */,
 				95263C021EEAE078005815DC /* LaunchScreen.storyboard */,
+				95A9BF691EF1729300676B25 /* SwiftyJSON.swift */,
 				95263C051EEAE078005815DC /* Info.plist */,
 				95A9BF651EF1233D00676B25 /* GoogleService-Info.plist */,
 			);
@@ -112,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				95263D6C1EEBE6F2005815DC /* City.swift */,
+				95A9BF6B1EF1B49900676B25 /* CustomFunctions.swift */,
+				95A9BF6D1EF1B70800676B25 /* HardCode.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -241,10 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9575C2A81EF408B600130E36 /* CityDetailsViewController.swift in Sources */,
 				95263BFC1EEAE078005815DC /* ViewController.swift in Sources */,
 				95263D6D1EEBE6F2005815DC /* City.swift in Sources */,
 				95263D781EEC2885005815DC /* Cell.swift in Sources */,
+				95A9BF6E1EF1B70800676B25 /* HardCode.swift in Sources */,
 				95263D6B1EEBCC71005815DC /* TableViewController.swift in Sources */,
+				95A9BF6C1EF1B49900676B25 /* CustomFunctions.swift in Sources */,
+				95A9BF6A1EF1729300676B25 /* SwiftyJSON.swift in Sources */,
 				95263BFA1EEAE078005815DC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,5 +15,6 @@ pod 'FacebookShare'
 pod ‘Firebase’
 pod ‘Firebase/Database’
 pod 'Firebase/Core'
+pod ‘SwiftyJSON’
 
 end
